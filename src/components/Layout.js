@@ -1,15 +1,15 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from "react";
+import Helmet from "react-helmet";
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Header from "../components/Header";
+import "./all.sass";
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children}</div>
+    <Header />
+    <div className="content">{children}</div>
   </div>
-)
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;
