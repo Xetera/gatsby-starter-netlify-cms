@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 // import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
+import pot from "../img/hot-kitchen-pot.svg";
+import knife from "../img/big-knife.svg";
+import people from "../img/multiple-users-silhouette.svg";
 
 export default class RecipePage extends React.Component {
   render() {
@@ -22,27 +25,32 @@ export default class RecipePage extends React.Component {
                 style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
                 key={recipe.frontmatter.title}
               >
-                <img src={recipe.frontmatter.image} style={{ width: "185px" }} />
-                <p>
-                  {/* <Link className="has-text-primary" to={recipe.fields.slug}> */}
+                <div
+                  style={{
+                    color: "#574D3F",
+                    fontSize: "18px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    marginBottom: "18px"
+                  }}
+                >
                   {recipe.frontmatter.title}
-                  {/* </Link> */}
-                  <small>{recipe.frontmatter.date}</small>
-                </p>
-                <p>
-                  {recipe.title}
-                  <br />
-                  Prepare: {recipe.frontmatter.prepare_time}
-                  <br />
-                  Cook: {recipe.frontmatter.cook_time}
-                  <br />
-                  Servings: {recipe.frontmatter.servings}
-                  <br />
-                  <br />
-                  {/* <Link className="button is-small" to={recipe.fields.slug}>
-                    See recipe →
-                  </Link> */}
-                </p>
+                </div>
+                <div style={{ display: "flex" }}>
+                  <div style={{ flex: "0 0 185px" }}>
+                    <img src={recipe.frontmatter.image} style={{ width: "185px" }} />
+                  </div>
+                  <div style={{ flex: "1 0 auto", marginLeft: "20px" }}>
+                    <img src={knife} style={{ width: "20px", marginRight: "8px" }} /> {recipe.frontmatter.prepare_time}m
+                    preparation
+                    <br />
+                    <img src={pot} style={{ width: "20px", marginRight: "8px" }} /> {recipe.frontmatter.cook_time}m
+                    cooking
+                    <br />
+                    <img src={people} style={{ width: "20px", marginRight: "8px" }} /> {recipe.frontmatter.servings}{" "}
+                    servings
+                  </div>
+                </div>
               </div>
             ))}
           </div>
