@@ -19,6 +19,25 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
+  - name: "recipes"
+    label: "Recipe"
+    folder: "src/pages/recipes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recipe-page"}
+      - {label: Title, name: title, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Heading, name: heading, widget: string}
+      - {label: Description, name: description, widget: string}
+      - {label: Prepare_time, name: prepare_time, widget: number}
+      - {label: Cook_time, name: cook_time, widget: number}
+      - {label: Servings, name: servings, widget: number}
+      - {label: Full_image, name: full_image, widget: image}
+      - {label: Vegetables, name: vegetables, widget: list, fields: [{text: Text, name: text, widget: string}]}
+      - {label: Steps, name: steps, widget: list, fields: [{text: Text, name: text, widget: string}]}
+      - {label: Ingredients, name: ingredients, widget: list, fields: [{text: Text, name: text, widget: string}]}
+
   - name: "pages"
     label: "Pages"
     files:
@@ -43,20 +62,3 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-      - file: "src/pages/recipes/index.md"
-        label: "Recipes Page"
-        name: "recipes"
-        create: true
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recipe-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Prepare_time, name: prepare_time, widget: number}
-          - {label: Cook_time, name: cook_time, widget: number}
-          - {label: Servings, name: servings, widget: number}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Vegetables, name: vegetables, widget: list, fields: [{text: Text, name: text, widget: string}]}
-          - {label: Steps, name: steps, widget: list, fields: [{text: Text, name: text, widget: string}]}
-          - {label: Ingredients, name: ingredients, widget: list, fields: [{text: Text, name: text, widget: string}]}
