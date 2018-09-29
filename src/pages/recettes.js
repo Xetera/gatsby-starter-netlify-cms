@@ -16,16 +16,16 @@ export default class RecipePage extends React.Component {
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">Recettes</h1>
             </div>
-            {recipes.map(({node: recipe}) => (
+            {recipes.map(({ node: recipe }) => (
               <div
                 className="content"
                 style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
                 key={recipe.frontmatter.title}
               >
-                <img src={recipe.frontmatter.image} style={{ width: "185px" }}/>
+                <img src={recipe.frontmatter.image} style={{ width: "185px" }} />
                 <p>
                   {/* <Link className="has-text-primary" to={recipe.fields.slug}> */}
-                    {recipe.frontmatter.title}
+                  {recipe.frontmatter.title}
                   {/* </Link> */}
                   <small>{recipe.frontmatter.date}</small>
                 </p>

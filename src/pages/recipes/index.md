@@ -1,5 +1,5 @@
 ---
-templateKey: 'recipe-page'
+templateKey: "recipe-page"
 path: /recipes
 title: Our Coffee
 image: /img/jumbotron.jpg
